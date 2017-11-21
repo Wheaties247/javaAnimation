@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<title>Bicycle VS MTA</title>
+</head>
+<body>
+		<h2 id="first">It's Faster</h2>
+		<h2 id="second">Cheaper</h2>
+		<h2 id="third">And Quality of
+		<br>Life Increases</h2>
+		
+		<div  id="noMTA" width="100px" height="100px" onclick="move()">
+			<img src="not.gif" class="no" width="70px" height="70px">
+			<h1>Reasons I prefer Cycling over the MTA:</h1>
+			<img src="mta.png" class="mtaLogo" width="60px">
+		</div>
+		
+		<h2 id="fourth">Unless...</h2>
+			<img src="explosion.gif"  id="explosion" height="500px">
+			<img src="bus.gif" id="bus" height="200px">
+		<img src="bikeRider.gif" id="bikeRider">
+		
+		<script type="text/javascript">
+		
+		function move() {
+			var banner=document.getElementById('noMTA');
+			var bikeRider = document.getElementById("bikeRider");
+			var faster = document.getElementById("first");
+			var cheaper = document.getElementById("second");
+			var qol = document.getElementById("third");
+			var but= document.getElementById("fourth");
+			var bulletPos = 0;
+			var rpos=0;
+			var bikePos=0;
+			var pos1=0;
+			var id = setInterval(frame, 1);
+			function frame() {
+				if(bikePos<1800){
+					bikePos++;
+					banner.style.margin = (bikePos*bikePos) + "px";
+					bikeRider.style.left = (bikePos*0.8) + "px";
+					}
+				else if (bikePos>=1650 && bulletPos<=4000) {
+					bulletPos++;
+					faster.style.left = (bulletPos*1.2) +"px"; //faster
+					cheaper.style.left = (bulletPos*1) + "px";//cheaper
+					qol.style.left = (bulletPos * 0.67) + "px";//quality of life
+					but.style.left = bulletPos * (bulletPos* 0.0001) + "px";//Unless
+					console.log(bulletPos);
+				}
+				else if (bulletPos>4000 && bikePos>=1650){
+					explosion.style.opacity=1;
+					bulletPos++;
+				}
+				else if (bulletPos>4001){
+					bulletPos++;
+					explosion.style.opacity=0;
+					bus.style.right= bulletPos+ "px";
+				}
+				else{
+					clearInterval(id);
+				}
+			}
+		}
+		
+		// function move2() {
+		// 	var explosion = document.getElementById("explosion");
+		// 	var bus= document.getElementById("bus");
+		// 	var position=0;
+		// 	var id2=setInterval(frame2,1);
+		// 	function frame2(){
+		// 		if (positon==0){
+		// 			explosion.style.opacity=1;
+		// 			positon++;
+		// 		}
+		// 		else if(position>0){
+		// 			position++;
+		// 			explosion.style.opacity=0;
+		// 			bus.style.right = position + "px";
+		// 		}
+		// 		else{
+		// 			clearInterval(id2);
+		// 		}
+		// 	}	
+		// }
+		</script>
+</body>
+</html>

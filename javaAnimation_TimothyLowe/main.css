@@ -1,0 +1,68 @@
+@keyframes words{
+	0%{
+		opacity: 0;
+	}
+	50%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+@keyframes title{
+	0%{
+		transform: rotate(0deg);
+	}	
+	100%{
+		transform: rotate(1080deg);
+	}
+}
+body{
+	color:rgba(132,255,236,.9);
+	background: url(nycstreet.jpg) no-repeat center	center fixed;
+	background-size: cover;
+}	
+
+h1{
+	display: inline-block;
+} 
+#noMTA{	/*the DIV that holds the title*/
+	border-radius: 15px;
+	margin-left: 320px;
+	background: rgba(0, 0, 0, .4);
+	text-align: center;
+	display:inline-block;
+	position: fixed;	
+}
+#noMTA:hover{
+	animation-name: title;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+h2{
+	letter-spacing: 1px;
+	word-spacing: 2px;
+	font-size: 40px;
+	position: relative;
+	display: block;
+	color: rgba(245,179,51,.8);
+	padding:-400px;
+	margin-left: -400px;
+	margin-top: 30px; 
+}
+#bus{
+	position: fixed;
+	right:-800px;
+	padding-top: 165px;
+}
+#explosion{
+	position: fixed;
+	right: -150px;
+	transform: rotate(270deg);
+	opacity: 0;
+}
+#bikeRider{
+	position: fixed;
+	left:-400px;	
+	padding-top: 120px;
+}
